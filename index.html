@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free 1-1 Property Plan | AOA Real Estate</title>
+<meta name="description" content="Know exactly what to buy, and when. Book a free 1-1 property plan with Aaron Oon and the AOA Real Estate team.">
+<meta property="og:title" content="Free 1-1 Property Plan | AOA Real Estate">
+<meta property="og:description" content="Know exactly what to buy, and when. Book a free 1-1 property plan with AOA Real Estate.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/aoa-logo.png">
+<style>
+:root{--ink:#1d1d1f;--muted:#515154;--line:#d2d2d7;--soft:#f5f5f7;--accent:#0058d6;--accent-press:#003f9e;--wrap:760px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font:1.0625rem/1.47 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent)}a:hover{color:var(--accent-press)}
+h1,h2,h3,p{margin:0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.section{padding:64px 0}
+.soft{background:var(--soft)}
+h2{font-size:clamp(1.75rem,5vw,2.75rem);line-height:1.1;letter-spacing:-.025em;font-weight:700;scroll-margin-top:120px}
+.muted{color:var(--muted)}
+
+/* Buttons: feedback on press, instantly */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border:0;border-radius:999px;background:var(--accent);color:#fff;font:inherit;font-weight:600;text-decoration:none;cursor:pointer;transition:transform 100ms ease-out,background-color 150ms ease}
+.btn:hover{background:var(--accent-press);color:#fff}
+.btn:active{transform:scale(.97)}
+.btn.small{min-height:44px;padding:0 18px;font-size:.875rem}
+
+/* Header: translucent material, content scrolls under */
+.bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);transition:box-shadow 200ms ease}
+.bar.scrolled{box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.bar-in{max-width:1080px;margin:0 auto;padding:8px 16px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:24px}
+.logo{display:inline-flex;align-items:center;min-height:44px}
+.logo img{height:36px;width:auto}
+.nav{order:3;flex:1 1 100%;display:flex;gap:20px;overflow-x:auto;white-space:nowrap;font-size:.875rem;font-weight:500;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;transition:color 150ms ease,border-color 150ms ease}
+.nav a:hover,.nav a.active{color:var(--accent)}
+.nav a.active{border-bottom-color:var(--accent)}
+@media (min-width:820px){.bar-in{padding-bottom:8px}.nav{order:0;flex:0 1 auto;margin-left:auto}}
+
+/* Hero */
+.hero{padding:0 0 64px;text-align:center}
+.hero-bg{padding:48px 0 0}
+.hero-bg .wrap{display:flex;flex-direction:column;align-items:center;gap:20px}
+.hero-bg p.lead{color:var(--muted);text-wrap:pretty;max-width:36em}
+.hero-rest{padding-top:20px}
+.hero .wrap{display:flex;flex-direction:column;align-items:center;gap:20px}
+h1{font-size:clamp(2.25rem,7vw,4rem);line-height:1.06;letter-spacing:-.03em;font-weight:700;text-wrap:balance}
+.hero p.lead{color:var(--muted);text-wrap:pretty;max-width:36em}
+.video{width:100%;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:#000}
+.video iframe,.video video{width:100%;height:100%;border:0;display:block}
+.video.empty{background:var(--soft);border:1.5px dashed #a1a1a6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:.875rem;color:var(--muted)}
+.video.empty svg{width:48px;height:48px}.video.empty circle{fill:none;stroke:#a1a1a6;stroke-width:1.5}.video.empty path{fill:#a1a1a6}
+.featured{display:flex;flex-direction:column;gap:18px;align-items:center;width:100%;margin-top:28px}
+.eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px 28px}
+.logos .dns{height:40px;width:auto}
+.logos .edge{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1.375rem;letter-spacing:-.01em}
+.logos .edge img{height:44px;width:44px}
+
+/* Booking */
+.book .wrap{display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center}
+.book-card{width:100%;background:#fff;border-radius:20px;padding:32px 24px;display:flex;flex-direction:column;gap:16px;align-items:center;box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06)}
+.book-card h3{font-size:1.25rem;letter-spacing:-.015em}
+.book-embed{width:100%;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06)}
+.book-embed > iframe{width:100%;height:720px;border:0;display:block}
+.book-embed .book-card{box-shadow:none}
+.alt{font-size:.9375rem}
+.host{width:100%;display:flex;gap:28px;align-items:stretch;text-align:left;margin-top:16px;padding-top:28px;border-top:1px solid var(--line)}
+.host-photo{position:relative;flex:0 0 112px;min-height:120px;border-radius:18px;overflow:hidden}
+.host-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 22%}
+.host h3{font-size:1.75rem;line-height:1.15;letter-spacing:-.02em;margin:4px 0 8px}
+.host p.muted{font-size:.9375rem}
+[hidden]{display:none!important}
+
+/* What you leave with */
+.points{display:flex;flex-direction:column;gap:28px;margin-top:32px}
+.point{display:flex;gap:16px}
+.point .n{font-size:1.75rem;font-weight:700;letter-spacing:-.02em;color:var(--accent);line-height:1.1;min-width:28px}
+.point h3{font-size:1.1875rem;letter-spacing:-.01em;margin-bottom:6px}
+.point p{color:var(--muted)}
+
+/* Reviews */
+.stars{display:block;width:130px;height:26px;margin-top:12px;fill:#f5a623}
+.rating{margin-top:8px;color:var(--muted)}
+.rail-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.rail-btns{display:none;gap:8px}
+.rail-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:transform 100ms ease-out,background-color 150ms ease}
+.rail-btn:hover{background:var(--soft)}
+.rail-btn:active{transform:scale(.94)}
+.rail-btn[disabled]{opacity:.35;cursor:default}
+.rail-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+@media (hover:hover) and (min-width:700px){.rail-btns{display:flex}}
+.rail{list-style:none;margin:24px 0 0;padding:4px 12px 12px 0;display:flex;align-items:flex-start;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{display:none}
+.rail li{flex:0 0 min(86%,360px);scroll-snap-align:start}
+.review{position:relative;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;width:100%;aspect-ratio:5/4;padding:0;border:0;background:#fff;border-radius:16px;overflow:hidden;cursor:zoom-in;box-shadow:0 1px 2px rgba(0,0,0,.04);transition:transform 100ms ease-out,box-shadow 200ms ease}
+.review:hover{box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.review:active{transform:scale(.985)}
+.review img{width:calc(100% + 8px);max-width:none;height:auto;margin:-4px -4px 0;flex:0 0 auto}
+.review.clip::after{content:"Read more";position:absolute;left:0;right:0;bottom:0;padding:44px 16px 12px;background:linear-gradient(rgba(255,255,255,0),#fff 55%);color:var(--accent);font-size:.8125rem;font-weight:600;text-align:left}
+.hint{margin-top:4px;font-size:.8125rem;color:var(--muted)}
+
+/* Lightbox: dim to focus, materialise rather than fade */
+dialog.lightbox{border:0;padding:0;background:#fff;width:min(92vw,620px);max-height:88vh;overflow:auto;border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.35);opacity:0;transform:scale(.96);transition:opacity 180ms ease,transform 220ms cubic-bezier(.2,.8,.2,1),overlay 220ms allow-discrete,display 220ms allow-discrete}
+dialog.lightbox[open]{opacity:1;transform:scale(1)}
+@starting-style{dialog.lightbox[open]{opacity:0;transform:scale(.96)}}
+dialog.lightbox::backdrop{background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.lightbox img{width:100%}
+.lightbox .close{position:sticky;top:8px;float:right;margin:8px 8px -52px 0;box-shadow:0 2px 8px rgba(0,0,0,.25);width:44px;height:44px;border-radius:50%;border:0;background:rgba(29,29,31,.82);color:#fff;font-size:1.25rem;line-height:1;cursor:pointer;z-index:1}
+
+/* FAQ */
+.faq-list{margin-top:24px;border-top:1px solid var(--line)}
+.faq-list details{border-bottom:1px solid var(--line)}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;padding:12px 0;font-weight:600}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"";flex:0 0 auto;width:10px;height:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform 200ms ease;margin-right:4px}
+.faq-list details[open] summary::after{transform:rotate(-135deg)}
+.faq-list details p{padding:0 0 20px;color:var(--muted)}
+
+/* Photo adjust mode (owner only, opened with #adjust-photo) */
+.host-photo.adjusting{outline:3px solid var(--accent);outline-offset:3px;cursor:grab;touch-action:none}
+.host-photo.adjusting.dragging{cursor:grabbing}
+.host-photo.adjusting img{user-select:none;-webkit-user-drag:none;pointer-events:none}
+.adjust-bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;max-width:calc(100vw - 24px);padding:10px 12px;border-radius:16px;background:rgba(255,255,255,.86);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);box-shadow:0 8px 30px rgba(0,0,0,.18);font-size:.875rem}
+.adjust-bar span{color:var(--muted);padding:0 4px}
+.adjust-bar button{min-height:40px;min-width:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
+.adjust-bar button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* Final call to action and footer */
+.final{padding:24px 0 72px;text-align:center}
+.final .wrap{display:flex;flex-direction:column;align-items:center;gap:20px}
+.final h2{font-size:clamp(2rem,6vw,3.25rem);line-height:1.06;letter-spacing:-.03em;text-wrap:balance}
+footer .wrap{padding-top:40px;padding-bottom:40px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;font-size:.75rem;color:var(--muted);line-height:1.5}
+footer img{height:48px;width:auto;align-self:center}
+
+/* Scroll reveal: only when scripts run and motion is welcome */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity 500ms ease,transform 600ms cubic-bezier(.2,.8,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,.rail-btn,.review{transition:none}.btn:active,.rail-btn:active,.review:active{transform:none}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  dialog.lightbox{transition:opacity 150ms ease;transform:none}
+}
+@media (prefers-reduced-transparency:reduce){.bar{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}dialog.lightbox::backdrop{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(0,0,0,.75)}}
+@media (prefers-contrast:more){.bar{background:#fff;border-bottom:1px solid var(--ink)}}
+</style>
+</head>
+<body>
+
+<header class="bar" id="bar">
+  <div class="bar-in">
+    <a class="logo" href="#top" aria-label="AOA Real Estate, back to top"><img src="assets/aoa-logo.png" alt="AOA Real Estate" width="1348" height="705"></a>
+    <nav class="nav" aria-label="Page sections">
+      <a href="#book">Book your plan</a>
+      <a href="#about">Who you'll meet</a>
+      <a href="#plan">What you leave with</a>
+      <a href="#reviews">What clients say</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <a class="btn small" href="#book" data-cta="header">Book free plan</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <div class="wrap">
+      <h1>Know exactly what to buy, and when.</h1>
+      <p class="lead">I'm Aaron. I've spent 5 years closing a high volume of property deals in Singapore, so I know this market in depth. I'll help you make your next move with data-backed answers, starting with a free 1-1 plan built on your own numbers.</p>
+      <a class="btn" href="#book" data-cta="hero">Book my free property plan</a>
+    </div>
+  </div>
+  <div class="wrap hero-rest">
+    <div class="video empty" id="video"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M20 16l13 8-13 8z"/></svg><span>16:9 video goes here</span></div>
+    <div class="featured">
+      <p class="eyebrow">As featured in</p>
+      <div class="logos">
+        <img class="dns" src="assets/dollarsandsense-logo.png" alt="DollarsAndSense" width="500" height="100">
+        <span class="edge"><img src="assets/edgeprop-logo.jpg" alt="" width="200" height="200">EdgeProp</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft book" id="book" style="scroll-margin-top:100px">
+  <div class="wrap">
+    <h2 class="reveal">Book your 1-1 property plan</h2>
+    <div class="book-embed reveal" id="book-embed" hidden></div>
+    <div class="book-card reveal" id="book-wa">
+      <h3>Pick a time over WhatsApp</h3>
+      <p class="muted">Send us two or three times that suit you and we'll confirm one.</p>
+      <a class="btn" data-wa="book" href="https://wa.me/6583368624?text=Hi%20AOA%2C%20I%27d%20like%20to%20book%20my%20free%20property%20plan." rel="noopener">Book on WhatsApp</a>
+    </div>
+    <p class="alt" id="book-alt" hidden>No slot that works? <a data-wa="alt" href="https://wa.me/6583368624" rel="noopener">WhatsApp the team</a></p>
+    <div class="host reveal">
+      <div class="host-photo"><img src="assets/aaron.jpg" alt="Aaron Oon" width="688" height="1080" loading="lazy"></div>
+      <div>
+        <p class="eyebrow">Who you'll be speaking with</p>
+        <h3 id="about" style="scroll-margin-top:140px">Aaron Oon</h3>
+        <p class="muted">Aaron mentors a team of realtors at AOA Real Estate and is a chief trainer in real estate marketing. He also co-founded haio.sg, Singapore's #1 property data platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 id="plan" class="reveal">What you leave with</h2>
+    <div class="points">
+      <div class="point reveal"><span class="n">1</span><div><h3>A deep understanding of the market</h3><p>We'll cover the economy and property market heading into 2027, where the opportunities are, and how regulations sort properties into four era groups.</p></div></div>
+      <div class="point reveal"><span class="n">2</span><div><h3>A deep understanding of your numbers and timeline</h3><p>What you can safely afford after loan limits, CPF and stamp duties, whether to sell first or buy first, and the cash needed at each step.</p></div></div>
+      <div class="point reveal"><span class="n">3</span><div><h3>A clear property plan built around your needs</h3><p>We'll bring it all together into one plan for your situation: which properties suit you, when to make your move, and the steps to take next. It's yours to keep, whether or not you work with us.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section soft">
+  <div class="wrap">
+    <div class="rail-head">
+      <div>
+        <h2 id="reviews" class="reveal">What Clients Say</h2>
+        <svg class="stars" role="img" aria-label="5 out of 5 stars" viewBox="0 0 120 24"><path id="st" d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/><use href="#st" x="24"/><use href="#st" x="48"/><use href="#st" x="72"/><use href="#st" x="96"/></svg>
+        <p class="rating">Rated 5.0 from 21 reviews on <a href="https://www.propertyguru.com.sg/agent/aaron-oon-13566407" rel="noopener">PropertyGuru</a></p>
+      </div>
+      <div class="rail-btns">
+        <button class="rail-btn" type="button" id="rail-prev" aria-label="Previous reviews"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="rail-btn" type="button" id="rail-next" aria-label="More reviews"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </div>
+  <ul class="rail" id="rail" aria-label="Client reviews">
+    <li><button class="review" type="button" aria-label="Open review by Grace Chan"><img src="assets/reviews/01-grace-chan.jpg" alt="Five-star PropertyGuru review by Grace Chan" width="990" height="541" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by Kevin William"><img src="assets/reviews/02-kevin-william.jpg" alt="Five-star PropertyGuru review by Kevin William" width="990" height="734" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by Jeannie Lim"><img src="assets/reviews/03-jeannie-lim.jpg" alt="Five-star PropertyGuru review by Jeannie Lim" width="990" height="782" loading="lazy" decoding="async"></button></li>
+    <li><button class="review clip" type="button" aria-label="Open review by Elaine Koh"><img src="assets/reviews/04-elaine-koh.jpg" alt="Five-star PropertyGuru review by Elaine Koh" width="990" height="1360" loading="lazy" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by Jonathan Tung"><img src="assets/reviews/05-jonathan-tung.jpg" alt="Five-star PropertyGuru review by Jonathan Tung" width="990" height="541" loading="lazy" decoding="async"></button></li>
+    <li><button class="review clip" type="button" aria-label="Open review by Jerry"><img src="assets/reviews/06-jerry.jpg" alt="Five-star PropertyGuru review by Jerry" width="990" height="975" loading="lazy" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by Ratleong cheong"><img src="assets/reviews/07-ratleong-cheong.jpg" alt="Five-star PropertyGuru review by Ratleong cheong" width="990" height="348" loading="lazy" decoding="async"></button></li>
+    <li><button class="review clip" type="button" aria-label="Open review by a reviewer"><img src="assets/reviews/08-reviewer-feb-2025.jpg" alt="Five-star PropertyGuru review by a reviewer" width="990" height="880" loading="lazy" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by a reviewer"><img src="assets/reviews/09-reviewer-dec-2024.jpg" alt="Five-star PropertyGuru review by a reviewer" width="990" height="396" loading="lazy" decoding="async"></button></li>
+    <li><button class="review clip" type="button" aria-label="Open review by Philip Chew"><img src="assets/reviews/10-philip-chew.jpg" alt="Five-star PropertyGuru review by Philip Chew" width="990" height="1023" loading="lazy" decoding="async"></button></li>
+    <li><button class="review clip" type="button" aria-label="Open review by Cindy Lai"><img src="assets/reviews/11-cindy-lai.jpg" alt="Five-star PropertyGuru review by Cindy Lai" width="990" height="927" loading="lazy" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by Shawque Said"><img src="assets/reviews/12-shawque-said.jpg" alt="Five-star PropertyGuru review by Shawque Said" width="990" height="396" loading="lazy" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by Vic Y RL"><img src="assets/reviews/13-vic-y-rl.jpg" alt="Five-star PropertyGuru review by Vic Y RL" width="990" height="541" loading="lazy" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by CYV RL"><img src="assets/reviews/14-cyv-rl.jpg" alt="Five-star PropertyGuru review by CYV RL" width="990" height="734" loading="lazy" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by Jing Jing Koh"><img src="assets/reviews/15-jing-jing-koh.jpg" alt="Five-star PropertyGuru review by Jing Jing Koh" width="990" height="541" loading="lazy" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by Claudine Tan"><img src="assets/reviews/16-claudine-tan.jpg" alt="Five-star PropertyGuru review by Claudine Tan" width="990" height="734" loading="lazy" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by Mary S"><img src="assets/reviews/17-mary-s.jpg" alt="Five-star PropertyGuru review by Mary S" width="990" height="734" loading="lazy" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by Michael Marcelino"><img src="assets/reviews/18-michael-marcelino.jpg" alt="Five-star PropertyGuru review by Michael Marcelino" width="990" height="637" loading="lazy" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by a reviewer"><img src="assets/reviews/19-reviewer-aug-2023.jpg" alt="Five-star PropertyGuru review by a reviewer" width="990" height="398" loading="lazy" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by Syazwan Jainal"><img src="assets/reviews/20-syazwan-jainal.jpg" alt="Five-star PropertyGuru review by Syazwan Jainal" width="990" height="494" loading="lazy" decoding="async"></button></li>
+    <li><button class="review" type="button" aria-label="Open review by Jin tai"><img src="assets/reviews/21-jin-tai.jpg" alt="Five-star PropertyGuru review by Jin tai" width="990" height="735" loading="lazy" decoding="async"></button></li>
+  </ul>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 id="faq" class="reveal">Questions</h2>
+    <div class="faq-list">
+      <details><summary>Is it really free? What's the catch?</summary><p>Yes. The session and your plan cost nothing, and there's no obligation. If you later decide to buy or sell with us, we'll explain any fees upfront before you commit to anything.</p></details>
+      <details><summary>Will I be pressured to buy something?</summary><p>No. You'll get honest numbers and a clear plan, even if the right answer is to wait. The plan is yours to keep whether or not you work with us.</p></details>
+      <details><summary>I'm a year or more away from buying, or my HDB hasn't reached MOP. Is it too early?</summary><p>It's the best time. Planning early means your finances, loan and timeline are ready when you're eligible, instead of rushing a decision later.</p></details>
+      <details><summary>What should I prepare before the session?</summary><p>Just a rough idea of your budget, income, CPF balance and any existing loans. If you own a property now, have its details handy too. Don't worry if you don't have everything; we'll work through it together.</p></details>
+      <details><summary>Is it online or in person?</summary><p>Either, whichever suits you. Let us know your preference when you book.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2 class="reveal">Get your plan before your next viewing.</h2>
+    <a class="btn reveal" href="#book" data-cta="final">Book my free property plan</a>
+  </div>
+</section>
+</main>
+
+<footer class="soft">
+  <div class="wrap">
+    <img src="assets/aoa-logo.png" alt="AOA Real Estate" width="1348" height="705" loading="lazy">
+    <span>Aaron Oon, CEA Reg. No. R065081C · PropNex Realty Pte Ltd, Licence No. L3008022J · © <span id="year">2026</span></span>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Client review">
+  <button class="close" type="button" id="lightbox-close" aria-label="Close review">×</button>
+  <img id="lightbox-img" src="" alt="">
+</dialog>
+
+<script>
+/* ------------------------------------------------------------------
+   SETTINGS. Fill these in; everything else works without changes.
+   ------------------------------------------------------------------ */
+var CONFIG = {
+  PIXEL_ID: "",        // Meta pixel ID, e.g. "123456789012345". Empty = no pixel loaded.
+  BOOKING_URL: "https://cal.com/aaron-oon-gn3piy/30min", // Cal.com, Calendly or Google appointment link. Empty = WhatsApp booking card.
+  VIDEO_URL: "",       // YouTube embed link (https://www.youtube.com/embed/ID) or an .mp4 file. Empty = a placeholder box shows.
+  WHATSAPP: "6583368624",
+  WA_MESSAGE: "Hi AOA, I'd like to book my free property plan."
+};
+
+(function () {
+  var doc = document, root = doc.documentElement;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  root.classList.add("js");
+  function $(id) { return doc.getElementById(id); }
+  function track(name, custom, data) {
+    if (typeof window.fbq !== "function") return;
+    window.fbq(custom ? "trackCustom" : "track", name, data || {});
+  }
+
+  /* Meta pixel */
+  if (CONFIG.PIXEL_ID) {
+    !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0"; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, doc, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    window.fbq("init", CONFIG.PIXEL_ID);
+    window.fbq("track", "PageView");
+  }
+
+  /* WhatsApp links */
+  var waBase = "https://wa.me/" + CONFIG.WHATSAPP;
+  Array.prototype.forEach.call(doc.querySelectorAll("[data-wa]"), function (a) {
+    a.href = a.getAttribute("data-wa") === "book" ? waBase + "?text=" + encodeURIComponent(CONFIG.WA_MESSAGE) : waBase;
+    a.addEventListener("click", function () { track("Contact", false, { method: "whatsapp", placement: a.getAttribute("data-wa") }); });
+  });
+  Array.prototype.forEach.call(doc.querySelectorAll("[data-cta]"), function (a) {
+    a.addEventListener("click", function () { track("BookCTAClick", true, { placement: a.getAttribute("data-cta") }); });
+  });
+
+  /* Booking calendar, when a link is set */
+  if (CONFIG.BOOKING_URL) {
+    var embed = $("book-embed"), booked = false;
+    function onBooked() { if (booked) return; booked = true; track("Schedule"); track("Lead"); }
+    function fallback() {
+      if (embed.querySelector("iframe")) return;
+      embed.textContent = "";
+      var box = doc.createElement("div"); box.className = "book-card";
+      box.innerHTML = '<h3>Pick a time that suits you</h3><p class="muted">Choose a 30-minute slot on our booking calendar.</p>';
+      var a = doc.createElement("a"); a.className = "btn"; a.href = CONFIG.BOOKING_URL; a.rel = "noopener"; a.textContent = "Open the booking calendar";
+      a.addEventListener("click", function () { track("BookCalendarOpen", true); });
+      box.appendChild(a); embed.appendChild(box);
+    }
+    embed.hidden = false; $("book-wa").hidden = true; $("book-alt").hidden = false;
+    var cal = CONFIG.BOOKING_URL.match(/^https:\/\/(?:app\.)?cal\.com\/(.+?)\/?$/);
+    if (cal) {
+      embed.innerHTML = '<div id="cal-inline" style="width:100%;min-height:640px"></div>';
+      (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; var sc = d.createElement("script"); sc.src = A; sc.onerror = fallback; d.head.appendChild(sc); cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      window.Cal("init", "aoa", { origin: "https://cal.com" });
+      window.Cal.ns.aoa("inline", { elementOrSelector: "#cal-inline", calLink: cal[1], config: { layout: "month_view" } });
+      window.Cal.ns.aoa("ui", { hideEventTypeDetails: false, layout: "month_view", styles: { branding: { brandColor: "#0058d6" } } });
+      window.Cal.ns.aoa("on", { action: "bookingSuccessfulV2", callback: onBooked });
+      window.Cal.ns.aoa("on", { action: "bookingSuccessful", callback: onBooked });
+      setTimeout(fallback, 10000);
+    } else {
+      var f = doc.createElement("iframe");
+      f.src = CONFIG.BOOKING_URL; f.title = "Book your 1-1 property plan"; f.loading = "lazy";
+      embed.appendChild(f);
+      window.addEventListener("message", function (e) {
+        var d = e.data || {};
+        var name = typeof d === "string" ? d : (d.event || d.type || "");
+        if (/event_scheduled|bookingSuccessful|booking_successful/i.test(String(name))) onBooked();
+      });
+    }
+  }
+
+  /* Video */
+  if (CONFIG.VIDEO_URL) {
+    var box = $("video"), el;
+    if (/\.(mp4|webm|mov)(\?|$)/i.test(CONFIG.VIDEO_URL)) {
+      el = doc.createElement("video"); el.src = CONFIG.VIDEO_URL; el.controls = true; el.playsInline = true; el.preload = "metadata";
+      el.addEventListener("play", function () { track("VideoPlay", true); }, { once: true });
+    } else {
+      el = doc.createElement("iframe"); el.src = CONFIG.VIDEO_URL; el.title = "Aaron explains the property plan"; el.allow = "accelerometer; autoplay; encrypted-media; picture-in-picture"; el.allowFullscreen = true; el.loading = "lazy";
+    }
+    box.textContent = ""; box.classList.remove("empty"); box.appendChild(el);
+  }
+
+  /* Header shadow once content scrolls under it */
+  var bar = $("bar");
+  function onScroll() { bar.classList.toggle("scrolled", window.scrollY > 8); }
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  /* Reveal on scroll and active menu link */
+  if ("IntersectionObserver" in window) {
+    var revealIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); revealIO.unobserve(en.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    Array.prototype.forEach.call(doc.querySelectorAll(".reveal"), function (el) { revealIO.observe(el); });
+
+    var links = {}, order = [];
+    Array.prototype.forEach.call(doc.querySelectorAll(".nav a"), function (a) {
+      var id = a.getAttribute("href").slice(1), t = $(id);
+      if (t) { links[id] = a; order.push(t); }
+    });
+    var navQueued = false, lastActive = null;
+    function syncNav() {
+      navQueued = false;
+      var current = null, best = -Infinity, line = window.innerHeight * 0.4;
+      order.forEach(function (t) { var y = t.getBoundingClientRect().top; if (y < line && y > best) { best = y; current = t.id; } });
+      Object.keys(links).forEach(function (id) { links[id].classList.toggle("active", id === current); });
+      if (current !== lastActive) {
+        lastActive = current;
+        var nav = doc.querySelector(".nav"), a = current && links[current];
+        if (a && nav.scrollWidth > nav.clientWidth) {
+          nav.scrollTo({ left: Math.max(0, a.offsetLeft - nav.offsetLeft - 16), behavior: reduce ? "auto" : "smooth" });
+        }
+      }
+    }
+    window.addEventListener("scroll", function () { if (!navQueued) { navQueued = true; requestAnimationFrame(syncNav); } }, { passive: true });
+    syncNav();
+  } else {
+    Array.prototype.forEach.call(doc.querySelectorAll(".reveal"), function (el) { el.classList.add("in"); });
+  }
+
+  /* Reviews: arrows and full-size view */
+  var rail = $("rail"), prev = $("rail-prev"), next = $("rail-next");
+  function step(dir) {
+    var card = rail.querySelector("li"), w = card ? card.getBoundingClientRect().width + 12 : 320;
+    rail.scrollBy({ left: dir * w * 2, behavior: reduce ? "auto" : "smooth" });
+  }
+  function syncArrows() {
+    prev.disabled = rail.scrollLeft < 8;
+    next.disabled = rail.scrollLeft + rail.clientWidth > rail.scrollWidth - 8;
+  }
+  prev.addEventListener("click", function () { step(-1); });
+  next.addEventListener("click", function () { step(1); });
+  rail.addEventListener("scroll", syncArrows, { passive: true }); syncArrows();
+
+  /* Auto-rotate: one card every few seconds. Pauses on hover, touch, keyboard focus,
+     while a review is open, when the tab is hidden or the row is off screen. */
+  var userHold = false, inView = false, resumeT = null;
+  function autoTick() {
+    var lb = $("lightbox");
+    if (userHold || !inView || doc.hidden || (lb && lb.open)) return;
+    var atEnd = rail.scrollLeft + rail.clientWidth > rail.scrollWidth - 8;
+    if (atEnd) { rail.scrollTo({ left: 0, behavior: "smooth" }); return; }
+    var c = rail.querySelector("li");
+    rail.scrollBy({ left: c ? c.getBoundingClientRect().width + 12 : 320, behavior: "smooth" });
+  }
+  function hold() { userHold = true; clearTimeout(resumeT); }
+  function release(ms) { clearTimeout(resumeT); resumeT = setTimeout(function () { userHold = false; }, ms); }
+  if (!reduce) {
+    setInterval(autoTick, 4000);
+    rail.addEventListener("pointerenter", hold);
+    rail.addEventListener("pointerleave", function () { release(1500); });
+    rail.addEventListener("touchstart", hold, { passive: true });
+    rail.addEventListener("touchend", function () { release(6000); }, { passive: true });
+    rail.addEventListener("focusin", hold);
+    rail.addEventListener("focusout", function () { release(1500); });
+    [prev, next].forEach(function (b) { b.addEventListener("click", function () { hold(); release(8000); }); });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) { inView = es[0].isIntersecting; }, { threshold: 0.4 }).observe(rail);
+    } else { inView = true; }
+  }
+
+  var box = $("lightbox"), boxImg = $("lightbox-img"), opener = null;
+  if (box && typeof box.showModal === "function") {
+    rail.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest(".review") : null; if (!b) return;
+      var img = b.querySelector("img"); opener = b;
+      boxImg.src = img.currentSrc || img.src; boxImg.alt = img.alt;
+      box.showModal(); track("ReviewOpen", true);
+    });
+    $("lightbox-close").addEventListener("click", function () { box.close(); });
+    box.addEventListener("click", function (e) { if (e.target === box) box.close(); });
+    box.addEventListener("close", function () { if (opener) opener.focus(); });
+  }
+
+
+  /* Photo adjust mode: open the page with #adjust-photo, drag to reposition, +/- to zoom,
+     then "Copy settings". Visitors never see this. */
+  (function () {
+    var wrap = doc.querySelector(".host-photo"), img = wrap && wrap.querySelector("img");
+    if (!wrap || !img) return;
+    var st = { x: 62, y: 22, z: 1 }, bar = null, label = null;
+    function clamp(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
+    function apply() {
+      var pos = st.x.toFixed(0) + "% " + st.y.toFixed(0) + "%";
+      img.style.objectPosition = pos; img.style.transformOrigin = pos;
+      img.style.transform = st.z > 1.001 ? "scale(" + st.z.toFixed(2) + ")" : "";
+      if (label) label.textContent = "Position " + pos + " · Zoom " + st.z.toFixed(2) + "x";
+    }
+    function settings() { return "Photo position " + st.x.toFixed(0) + "% " + st.y.toFixed(0) + "%, zoom " + st.z.toFixed(2) + "x"; }
+    var drag = null;
+    function down(e) { drag = { id: e.pointerId, x: e.clientX, y: e.clientY, sx: st.x, sy: st.y }; wrap.setPointerCapture(e.pointerId); wrap.classList.add("dragging"); e.preventDefault(); }
+    function move(e) {
+      if (!drag || e.pointerId !== drag.id) return;
+      var r = wrap.getBoundingClientRect();
+      st.x = clamp(drag.sx - (e.clientX - drag.x) / r.width * 100 / st.z, 0, 100);
+      st.y = clamp(drag.sy - (e.clientY - drag.y) / r.height * 100 / st.z, 0, 100);
+      apply();
+    }
+    function up() { drag = null; wrap.classList.remove("dragging"); }
+    function zoom(d) { st.z = clamp(st.z + d, 1, 3); apply(); }
+    function wheel(e) { e.preventDefault(); zoom(e.deltaY < 0 ? 0.08 : -0.08); }
+    function btn(text, fn, cls) { var b = doc.createElement("button"); b.type = "button"; b.textContent = text; if (cls) b.className = cls; b.addEventListener("click", fn); return b; }
+    function on() {
+      if (bar) return;
+      wrap.classList.add("adjusting");
+      wrap.addEventListener("pointerdown", down); wrap.addEventListener("pointermove", move);
+      wrap.addEventListener("pointerup", up); wrap.addEventListener("pointercancel", up);
+      wrap.addEventListener("wheel", wheel, { passive: false });
+      bar = doc.createElement("div"); bar.className = "adjust-bar"; bar.setAttribute("role", "toolbar"); bar.setAttribute("aria-label", "Adjust photo");
+      label = doc.createElement("span");
+      var copy = btn("Copy settings", function () {
+        var t = settings();
+        var done = function () { copy.textContent = "Copied"; setTimeout(function () { copy.textContent = "Copy settings"; }, 1500); };
+        try { navigator.clipboard.writeText(t).then(done, function () { label.textContent = t; }); } catch (err) { label.textContent = t; }
+      }, "primary");
+      bar.appendChild(btn("−", function () { zoom(-0.1); }));
+      bar.appendChild(btn("+", function () { zoom(0.1); }));
+      bar.appendChild(btn("Reset", function () { st = { x: 62, y: 22, z: 1 }; apply(); }));
+      bar.appendChild(label); bar.appendChild(copy);
+      bar.appendChild(btn("Done", off));
+      doc.body.appendChild(bar); apply();
+      wrap.scrollIntoView({ block: "center", behavior: reduce ? "auto" : "smooth" });
+    }
+    function off() {
+      if (!bar) return;
+      wrap.classList.remove("adjusting");
+      wrap.removeEventListener("pointerdown", down); wrap.removeEventListener("pointermove", move);
+      wrap.removeEventListener("pointerup", up); wrap.removeEventListener("pointercancel", up);
+      wrap.removeEventListener("wheel", wheel);
+      bar.remove(); bar = null; label = null;
+    }
+    function check() { if (location.hash === "#adjust-photo") on(); }
+    window.addEventListener("hashchange", check); check();
+  })();
+
+  $("year").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
