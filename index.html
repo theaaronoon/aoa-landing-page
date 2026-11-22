@@ -16,11 +16,14 @@
 :root{--ink:#1d1d1f;--muted:#515154;--line:#d2d2d7;--soft:#f5f5f7;--accent:#0058d6;--accent-press:#003f9e;--wrap:1040px;--measure:760px;
   --base:#fff;--on-accent:#fff;--accent-ink:var(--accent);--eyebrow:var(--muted);--star:#f5a623;--link-hover:var(--accent-press);--bar-bg:rgba(255,255,255,.72);--nav-bg:rgba(255,255,255,.94);
   --brand:#1d1d1f;--brand-deep:#111;--on-brand:#fff;--on-brand-muted:#c7c7cc;--accent-on-brand:#6aa6ff}
-/* Colour palettes: two main colours (brand + base) and one accent. Set with <html data-palette="…">. */
-html[data-palette="navy"]{--brand:#14284B;--brand-deep:#0E1D38;--base:#F8F5EF;--soft:#EFE8DC;--muted:#4A5670;--line:#DCD3C3;--accent:#C9973F;--accent-press:#D9AC55;--on-accent:#14284B;--accent-ink:#835A12;--accent-on-brand:#E2B867;--on-brand-muted:#C9D1DE;--star:#C9973F}
-html[data-palette="forest"]{--brand:#1E3A2C;--brand-deep:#152B20;--base:#F7F3EA;--soft:#EDE6D6;--muted:#4D5B52;--line:#D9D0BD;--accent:#BF5530;--accent-press:#A84826;--on-accent:#fff;--accent-ink:#A9482A;--accent-on-brand:#EE9A70;--on-brand-muted:#C6D3CA;--star:#BF5530}
-html[data-palette="coral"]{--brand:#0E2235;--brand-deep:#091827;--base:#F5F7F9;--soft:#E9EEF3;--muted:#4A5868;--line:#D3DBE3;--accent:#FF6B3D;--accent-press:#FF8259;--on-accent:#0E2235;--accent-ink:#B53A0A;--accent-on-brand:#FF8C66;--on-brand-muted:#B9C6D3;--star:#FF6B3D}
-html[data-palette="teal"]{--brand:#0F4747;--brand-deep:#0A3434;--base:#FAF6F1;--soft:#F1E9DF;--muted:#4C5E5D;--line:#DED3C6;--accent:#C23F68;--accent-press:#AA3459;--on-accent:#fff;--accent-ink:#AD3A5E;--accent-on-brand:#F59AB7;--on-brand-muted:#C3D6D5;--star:#C23F68}
+/* Colour palettes: black and white do the work, plus one accent. Set with <html data-palette="…">. */
+html[data-palette]{--brand:#0A0A0A;--brand-deep:#000;--base:#fff;--soft:#F4F4F5;--muted:#52525B;--line:#E4E4E7;--on-brand-muted:#A1A1AA}
+html[data-palette="gold"]{--accent:#C9A24A;--accent-press:#D8B55F;--on-accent:#0A0A0A;--accent-ink:#85661D;--accent-on-brand:#D9B45A;--star:#C9A24A}
+html[data-palette="orange"]{--accent:#FF5A1F;--accent-press:#FF7440;--on-accent:#0A0A0A;--accent-ink:#C2410C;--accent-on-brand:#FF6A33;--star:#FF5A1F}
+html[data-palette="red"]{--accent:#D7192F;--accent-press:#B51428;--on-accent:#fff;--accent-ink:#C21329;--accent-on-brand:#FF5A6A;--star:#D7192F}
+html[data-palette="emerald"]{--accent:#0B7A53;--accent-press:#096845;--on-accent:#fff;--accent-ink:#0B7A53;--accent-on-brand:#34D399;--star:#0B7A53}
+html[data-palette="lime"]{--accent:#C6F135;--accent-press:#D4F566;--on-accent:#0A0A0A;--accent-ink:#0A0A0A;--accent-on-brand:#C6F135;--star:#0A0A0A}
+html[data-palette="blue"]{--accent:#2457FF;--accent-press:#1A44D6;--on-accent:#fff;--accent-ink:#2457FF;--accent-on-brand:#7C9BFF;--star:#2457FF}
 html[data-palette]{--ink:var(--brand);--link-hover:var(--brand);--eyebrow:var(--accent-ink);--bar-bg:color-mix(in srgb,var(--base) 78%,transparent);--nav-bg:color-mix(in srgb,var(--base) 96%,transparent)}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
