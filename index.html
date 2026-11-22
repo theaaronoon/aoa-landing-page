@@ -413,8 +413,8 @@ var CONFIG = {
       embed.innerHTML = '<div id="cal-inline" style="width:100%;min-height:640px"></div>';
       (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; var sc = d.createElement("script"); sc.src = A; sc.onerror = fallback; d.head.appendChild(sc); cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
       window.Cal("init", "aoa", { origin: "https://cal.com" });
-      window.Cal.ns.aoa("inline", { elementOrSelector: "#cal-inline", calLink: cal[1], config: { layout: "month_view" } });
-      window.Cal.ns.aoa("ui", { hideEventTypeDetails: false, layout: "month_view", styles: { branding: { brandColor: "#0058d6" } } });
+      window.Cal.ns.aoa("inline", { elementOrSelector: "#cal-inline", calLink: cal[1], config: { layout: "month_view", theme: "light" } });
+      window.Cal.ns.aoa("ui", { theme: "light", hideEventTypeDetails: false, layout: "month_view", styles: { branding: { brandColor: "#0058d6" } } });
       window.Cal.ns.aoa("on", { action: "bookingSuccessfulV2", callback: onBooked });
       window.Cal.ns.aoa("on", { action: "bookingSuccessful", callback: onBooked });
       setTimeout(fallback, 10000);
