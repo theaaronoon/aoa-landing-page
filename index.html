@@ -124,16 +124,16 @@ h1{font-size:clamp(2.25rem,7vw,4rem);line-height:1.06;letter-spacing:-.03em;font
 .stars{display:block;width:130px;height:26px;margin-top:12px;fill:#f5a623}
 .rating{margin-top:8px;color:var(--muted)}
 .rail-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
-.rail-btns{display:none;gap:8px}
-.rail-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:transform 100ms ease-out,background-color 150ms ease}
-.rail-btn:hover{background:var(--soft)}
-.rail-btn:active{transform:scale(.94)}
-.rail-btn[disabled]{opacity:.35;cursor:default}
-.rail-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-@media (hover:hover) and (min-width:700px){.rail-btns{display:flex}}
-.rail{list-style:none;margin:24px 0 0;padding:4px 12px 12px 0;display:flex;align-items:flex-start;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.rail::-webkit-scrollbar{display:none}
-.rail li{flex:0 0 min(86%,360px);scroll-snap-align:start}
+/* Reviews conveyor belt: always moving, pauses while someone hovers, presses or reads */
+.marquee{margin-top:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.marquee::-webkit-scrollbar{display:none}
+.rail{list-style:none;margin:0;padding:4px 12px 12px 0;display:flex;align-items:flex-start;gap:12px;width:max-content}
+.rail li{flex:0 0 min(82vw,360px);scroll-snap-align:start}
+.marquee.moving{overflow:hidden;scroll-snap-type:none}
+.marquee.moving .rail{animation:aoa-belt var(--belt-dur,200s) linear infinite;will-change:transform}
+.marquee.moving.paused .rail{animation-play-state:paused}
+@media (hover:hover){.marquee.moving:hover .rail{animation-play-state:paused}}
+@keyframes aoa-belt{to{transform:translateX(-50%)}}
 .review{position:relative;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;width:100%;aspect-ratio:5/4;padding:0;border:0;background:#fff;border-radius:16px;overflow:hidden;cursor:zoom-in;box-shadow:0 1px 2px rgba(0,0,0,.04);transition:transform 100ms ease-out,box-shadow 200ms ease}
 .review:hover{box-shadow:0 8px 24px rgba(0,0,0,.1)}
 .review:active{transform:scale(.985)}
@@ -191,7 +191,7 @@ footer img{height:48px;width:auto;align-self:center}
   .host h3{grid-column:2;align-self:start;margin:0;font-size:1.5rem}
   .host p.muted{grid-column:1/-1}
   /* Reviews: near full-width cards so the text stays readable */
-  .rail li{flex-basis:calc(100vw - 40px)}
+  .rail li{flex-basis:84vw}
   dialog.lightbox{width:calc(100vw - 16px);max-height:90vh;border-radius:14px}
   .faq-list summary{font-size:1rem}
   .final{padding-bottom:56px}
@@ -203,7 +203,8 @@ footer img{height:48px;width:auto;align-self:center}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .btn,.rail-btn,.review{transition:none}.btn:active,.rail-btn:active,.review:active{transform:none}
+  .btn,.review{transition:none}.btn:active,.review:active{transform:none}
+  .marquee.moving .rail{animation:none}
   .js .reveal{opacity:1;transform:none;transition:none}
   dialog.lightbox{transition:opacity 150ms ease;transform:none}
   .nav,.bar.open .nav{transform:none}
@@ -291,12 +292,9 @@ footer img{height:48px;width:auto;align-self:center}
         <svg class="stars" role="img" aria-label="5 out of 5 stars" viewBox="0 0 120 24"><path id="st" d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/><use href="#st" x="24"/><use href="#st" x="48"/><use href="#st" x="72"/><use href="#st" x="96"/></svg>
         <p class="rating">Rated 5.0 from 21 reviews on <a href="https://www.propertyguru.com.sg/agent/aaron-oon-13566407" rel="noopener">PropertyGuru</a></p>
       </div>
-      <div class="rail-btns">
-        <button class="rail-btn" type="button" id="rail-prev" aria-label="Previous reviews"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <button class="rail-btn" type="button" id="rail-next" aria-label="More reviews"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-      </div>
     </div>
   </div>
+  <div class="marquee" id="marquee">
   <ul class="rail" id="rail" aria-label="Client reviews">
     <li><button class="review" type="button" aria-label="Open review by Grace Chan"><img src="assets/reviews/01-grace-chan.jpg" alt="Five-star PropertyGuru review by Grace Chan" width="990" height="541" decoding="async"></button></li>
     <li><button class="review" type="button" aria-label="Open review by Kevin William"><img src="assets/reviews/02-kevin-william.jpg" alt="Five-star PropertyGuru review by Kevin William" width="990" height="734" decoding="async"></button></li>
@@ -320,6 +318,7 @@ footer img{height:48px;width:auto;align-self:center}
     <li><button class="review" type="button" aria-label="Open review by Syazwan Jainal"><img src="assets/reviews/20-syazwan-jainal.jpg" alt="Five-star PropertyGuru review by Syazwan Jainal" width="990" height="494" loading="lazy" decoding="async"></button></li>
     <li><button class="review" type="button" aria-label="Open review by Jin tai"><img src="assets/reviews/21-jin-tai.jpg" alt="Five-star PropertyGuru review by Jin tai" width="990" height="735" loading="lazy" decoding="async"></button></li>
   </ul>
+  </div>
 </section>
 
 <section class="section">
@@ -495,45 +494,38 @@ var CONFIG = {
     Array.prototype.forEach.call(doc.querySelectorAll(".reveal"), function (el) { el.classList.add("in"); });
   }
 
-  /* Reviews: arrows and full-size view */
-  var rail = $("rail"), prev = $("rail-prev"), next = $("rail-next");
-  function step(dir) {
-    var card = rail.querySelector("li"), w = card ? card.getBoundingClientRect().width + 12 : 320;
-    rail.scrollBy({ left: dir * w * 2, behavior: reduce ? "auto" : "smooth" });
-  }
-  function syncArrows() {
-    prev.disabled = rail.scrollLeft < 8;
-    next.disabled = rail.scrollLeft + rail.clientWidth > rail.scrollWidth - 8;
-  }
-  prev.addEventListener("click", function () { step(-1); });
-  next.addEventListener("click", function () { step(1); });
-  rail.addEventListener("scroll", syncArrows, { passive: true }); syncArrows();
-
-  /* Auto-rotate: one card every few seconds. Pauses on hover, touch, keyboard focus,
-     while a review is open, when the tab is hidden or the row is off screen. */
-  var userHold = false, inView = false, resumeT = null;
-  function autoTick() {
-    var lb = $("lightbox");
-    if (userHold || !inView || doc.hidden || (lb && lb.open)) return;
-    var atEnd = rail.scrollLeft + rail.clientWidth > rail.scrollWidth - 8;
-    if (atEnd) { rail.scrollTo({ left: 0, behavior: "smooth" }); return; }
-    var c = rail.querySelector("li");
-    rail.scrollBy({ left: c ? c.getBoundingClientRect().width + 12 : 320, behavior: "smooth" });
-  }
-  function hold() { userHold = true; clearTimeout(resumeT); }
-  function release(ms) { clearTimeout(resumeT); resumeT = setTimeout(function () { userHold = false; }, ms); }
-  if (!reduce) {
-    setInterval(autoTick, 4000);
-    rail.addEventListener("pointerenter", hold);
-    rail.addEventListener("pointerleave", function () { release(1500); });
-    rail.addEventListener("touchstart", hold, { passive: true });
-    rail.addEventListener("touchend", function () { release(6000); }, { passive: true });
-    rail.addEventListener("focusin", hold);
-    rail.addEventListener("focusout", function () { release(1500); });
-    [prev, next].forEach(function (b) { b.addEventListener("click", function () { hold(); release(8000); }); });
+  /* Reviews: conveyor belt. The cards are duplicated once so the loop is seamless;
+     the copies are hidden from screen readers and the keyboard. */
+  var rail = $("rail"), belt = $("marquee");
+  if (!reduce && rail && belt) {
+    Array.prototype.slice.call(rail.children).forEach(function (li) {
+      var c = li.cloneNode(true);
+      c.setAttribute("aria-hidden", "true");
+      Array.prototype.forEach.call(c.querySelectorAll("button"), function (bt) { bt.tabIndex = -1; });
+      rail.appendChild(c);
+    });
+    var SPEED = 32; /* pixels per second */
+    function setDuration() { belt.style.setProperty("--belt-dur", Math.max(30, rail.scrollWidth / 2 / SPEED).toFixed(1) + "s"); }
+    setDuration(); window.addEventListener("resize", setDuration);
+    belt.classList.add("moving");
+    /* Press and hold (touch) pauses; release resumes after a moment */
+    var resumeT = null;
+    belt.addEventListener("pointerdown", function () { clearTimeout(resumeT); belt.classList.add("paused"); });
+    ["pointerup", "pointercancel", "pointerleave"].forEach(function (ev) {
+      belt.addEventListener(ev, function () { clearTimeout(resumeT); resumeT = setTimeout(function () { if (!($("lightbox") || {}).open) belt.classList.remove("paused"); }, 1200); });
+    });
+    /* Keyboard users: pause while a card has visible focus */
+    belt.addEventListener("focusin", function (e) { if (e.target.matches && e.target.matches(":focus-visible")) belt.classList.add("paused"); });
+    belt.addEventListener("focusout", function () { if (!($("lightbox") || {}).open) belt.classList.remove("paused"); });
+    /* Load every review image once the section is close, so no card scrolls in blank */
     if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (es) { inView = es[0].isIntersecting; }, { threshold: 0.4 }).observe(rail);
-    } else { inView = true; }
+      var io = new IntersectionObserver(function (es) {
+        if (!es[0].isIntersecting) return;
+        Array.prototype.forEach.call(rail.querySelectorAll("img"), function (im) { im.loading = "eager"; });
+        io.disconnect();
+      }, { rootMargin: "800px 0px" });
+      io.observe(belt);
+    }
   }
 
   var box = $("lightbox"), boxImg = $("lightbox-img"), opener = null;
@@ -542,11 +534,12 @@ var CONFIG = {
       var b = e.target.closest ? e.target.closest(".review") : null; if (!b) return;
       var img = b.querySelector("img"); opener = b;
       boxImg.src = img.currentSrc || img.src; boxImg.alt = img.alt;
+      if (belt) belt.classList.add("paused");
       box.showModal(); track("ReviewOpen", true);
     });
     $("lightbox-close").addEventListener("click", function () { box.close(); });
     box.addEventListener("click", function (e) { if (e.target === box) box.close(); });
-    box.addEventListener("close", function () { if (opener) opener.focus(); });
+    box.addEventListener("close", function () { if (belt) belt.classList.remove("paused"); if (opener && !opener.closest("[aria-hidden]")) opener.focus(); });
   }
 
 
