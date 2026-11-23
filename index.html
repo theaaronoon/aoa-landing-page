@@ -153,16 +153,16 @@ h1{font-size:clamp(2.25rem,7vw,4rem);line-height:1.06;letter-spacing:-.03em;font
 .tile:active{transform:scale(.985)}
 .tile:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .tile.v{aspect-ratio:9/16}
-.tile.v img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 500ms cubic-bezier(.2,.8,.2,1)}
+.tile.v img,.tile.v video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#111;transition:transform 500ms cubic-bezier(.2,.8,.2,1)}
 .tile.v::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,0) 20%,rgba(0,0,0,0) 52%,rgba(0,0,0,.78))}
 .tile .views{position:absolute;top:10px;left:10px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:rgba(0,0,0,.5);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-size:.8125rem;font-weight:600;line-height:1}
 .tile .views svg{width:9px;height:10px;fill:currentColor}
 .tile .cap{position:absolute;left:12px;right:12px;bottom:12px;z-index:2;font-size:.8125rem;font-weight:600;line-height:1.3;text-wrap:pretty;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .tile .play{position:absolute;z-index:2;left:50%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:rgba(255,255,255,.92);color:#111;display:grid;place-items:center;opacity:0;transform:scale(.85);transition:opacity 200ms ease,transform 250ms cubic-bezier(.2,.8,.2,1)}
 .tile .play svg{width:18px;height:20px;margin-left:3px;fill:currentColor}
-@media (hover:hover){.tile.v:hover img{transform:scale(1.04)}.tile.v:hover .play{opacity:1;transform:none}}
+@media (hover:hover){.tile.v:hover img,.tile.v:hover video{transform:scale(1.04)}.tile.v:hover .play{opacity:1;transform:none}}
 .t-a{grid-area:a;aspect-ratio:4/5!important}
-.t-a img{object-position:50% 62%}
+.t-a img,.t-a video{object-position:50% 55%}
 .t-a .cap{font-size:1.0625rem;left:16px;right:16px;bottom:16px}
 .t-a .views{top:14px;left:14px;font-size:.875rem}
 .t-b{grid-area:b}.t-c{grid-area:c}.t-d{grid-area:d}.t-e{grid-area:e}.t-f{grid-area:f}
@@ -178,7 +178,7 @@ h1{font-size:clamp(2.25rem,7vw,4rem);line-height:1.06;letter-spacing:-.03em;font
 @media (min-width:600px){
   .bento{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-areas:"a a b" "a a c" "d e f" "s s s"}
   .t-a{aspect-ratio:auto!important}
-  .t-a img{object-position:50% 50%}
+  .t-a img,.t-a video{object-position:50% 50%}
   .t-stat{flex-direction:row;align-items:flex-end;padding:24px}
 }
 @media (min-width:900px){
@@ -292,7 +292,7 @@ html[data-palette] .plan :focus-visible,html[data-palette] .final :focus-visible
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .btn,.review{transition:none}.btn:active,.review:active{transform:none}
-  .tile,.tile.v img,.tile .play,.t-stat .follow .arr{transition:none}.tile:active{transform:none}.tile.v:hover img{transform:none}
+  .tile,.tile.v img,.tile.v video,.tile .play,.t-stat .follow .arr{transition:none}.tile:active{transform:none}.tile.v:hover img,.tile.v:hover video{transform:none}
   .marquee.moving .rail{animation:none}
   .js .reveal{opacity:1;transform:none;transition:none}
   dialog.lightbox{transition:opacity 150ms ease;transform:none}
@@ -376,17 +376,17 @@ html[data-palette] .plan :focus-visible,html[data-palette] .final :focus-visible
 <section class="section reels">
   <div class="wrap">
     <div class="reels-head">
-      <h2 id="videos" class="reveal">You've probably seen us on your feed.</h2>
-      <p class="reveal">Our most-watched property tours on Instagram. Tap one to watch.</p>
+      <h2 id="videos" class="reveal">You've probably seen me on your feed.</h2>
+      <p class="reveal">My most-watched property tours on Instagram. Tap one to watch it with sound.</p>
     </div>
     <div class="bento reveal">
-      <a class="tile v t-a" href="https://www.instagram.com/reel/DRPEnrBk6JZ/" data-reel="DRPEnrBk6JZ" rel="noopener" aria-label="Watch: Even the rich families have their own problems (2M views)"><img src="assets/reels/DRPEnrBk6JZ.webp" alt="" width="360" height="640" decoding="async"><span class="views"><svg viewBox="0 0 9 10" aria-hidden="true"><path d="M0 0l9 5-9 5z"/></svg>2M views</span><span class="play" aria-hidden="true"><svg viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z"/></svg></span></a>
-      <a class="tile v t-b" href="https://www.instagram.com/reel/DRzHI0VAZ5A/" data-reel="DRzHI0VAZ5A" rel="noopener" aria-label="Watch: Imagine waking up to this view on any floor (754K views)"><img src="assets/reels/DRzHI0VAZ5A.webp" alt="" width="300" height="533" decoding="async" loading="lazy"><span class="views"><svg viewBox="0 0 9 10" aria-hidden="true"><path d="M0 0l9 5-9 5z"/></svg>754K views</span><span class="play" aria-hidden="true"><svg viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z"/></svg></span><span class="cap" aria-hidden="true">Imagine waking up to this view on any floor</span></a>
-      <a class="tile v t-c" href="https://www.instagram.com/reel/DHdbKbTzSjN/" data-reel="DHdbKbTzSjN" rel="noopener" aria-label="Watch: Living next to Marina Bay Sands would be crazy, wouldn’t it? (394K views)"><img src="assets/reels/DHdbKbTzSjN.webp" alt="" width="300" height="533" decoding="async" loading="lazy"><span class="views"><svg viewBox="0 0 9 10" aria-hidden="true"><path d="M0 0l9 5-9 5z"/></svg>394K views</span><span class="play" aria-hidden="true"><svg viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z"/></svg></span><span class="cap" aria-hidden="true">Living next to Marina Bay Sands would be crazy, wouldn’t it?</span></a>
-      <a class="tile v t-d" href="https://www.instagram.com/reel/Da9gTzdy4Ql/" data-reel="Da9gTzdy4Ql" rel="noopener" aria-label="Watch: Would you live in this home? (375K views)"><img src="assets/reels/Da9gTzdy4Ql.webp" alt="" width="300" height="533" decoding="async" loading="lazy"><span class="views"><svg viewBox="0 0 9 10" aria-hidden="true"><path d="M0 0l9 5-9 5z"/></svg>375K views</span><span class="play" aria-hidden="true"><svg viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z"/></svg></span><span class="cap" aria-hidden="true">Would you live in this home?</span></a>
-      <a class="tile v t-e" href="https://www.instagram.com/reel/DVlS0Uykk6X/" data-reel="DVlS0Uykk6X" rel="noopener" aria-label="Watch: Who says living in a landed has to break the budget? (356K views)"><img src="assets/reels/DVlS0Uykk6X.webp" alt="" width="300" height="533" decoding="async" loading="lazy"><span class="views"><svg viewBox="0 0 9 10" aria-hidden="true"><path d="M0 0l9 5-9 5z"/></svg>356K views</span><span class="play" aria-hidden="true"><svg viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z"/></svg></span><span class="cap" aria-hidden="true">Who says living in a landed has to break the budget?</span></a>
-      <a class="tile v t-f" href="https://www.instagram.com/reel/DdK8YmRTmtW/" data-reel="DdK8YmRTmtW" rel="noopener" aria-label="Watch: POV: You said no to a landed and got this instead (242K views)"><img src="assets/reels/DdK8YmRTmtW.webp" alt="" width="300" height="533" decoding="async" loading="lazy"><span class="views"><svg viewBox="0 0 9 10" aria-hidden="true"><path d="M0 0l9 5-9 5z"/></svg>242K views</span><span class="play" aria-hidden="true"><svg viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z"/></svg></span><span class="cap" aria-hidden="true">POV: You said no to a landed and got this instead</span></a>
-      <a class="tile t-stat" href="https://www.instagram.com/aoa.realestate/" rel="noopener" data-cta="ig-follow"><span><span class="big">6.6M+</span><span class="lbl">views across our 26 reels</span></span><span class="follow"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg><span class="who"><span>Follow us <span class="arr" aria-hidden="true">→</span></span><small>@aoa.realestate</small></span></span></a>
+      <a class="tile v t-a" href="https://www.instagram.com/reel/C8J1KogSV50/" data-reel="C8J1KogSV50" rel="noopener" aria-label="Watch: Would you buy this piece of land in Singapore? (2.1M views)"><video muted loop playsinline disablepictureinpicture preload="none" poster="assets/reels/C8J1KogSV50.webp" width="540" height="960" aria-hidden="true"><source src="assets/reels/C8J1KogSV50.mp4" type="video/mp4"></video><span class="views"><svg viewBox="0 0 9 10" aria-hidden="true"><path d="M0 0l9 5-9 5z"/></svg>2.1M views</span><span class="play" aria-hidden="true"><svg viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z"/></svg></span><span class="cap" aria-hidden="true">Would you buy this piece of land in Singapore?</span></a>
+      <a class="tile v t-b" href="https://www.instagram.com/reel/DRPEnrBk6JZ/" data-reel="DRPEnrBk6JZ" rel="noopener" aria-label="Watch: Even the rich families have their own problems (2M views)"><video muted loop playsinline disablepictureinpicture preload="none" poster="assets/reels/DRPEnrBk6JZ.webp" width="360" height="640" aria-hidden="true"><source src="assets/reels/DRPEnrBk6JZ.mp4" type="video/mp4"></video><span class="views"><svg viewBox="0 0 9 10" aria-hidden="true"><path d="M0 0l9 5-9 5z"/></svg>2M views</span><span class="play" aria-hidden="true"><svg viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z"/></svg></span></a>
+      <a class="tile v t-c" href="https://www.instagram.com/reel/DKW9AeFTC2e/" data-reel="DKW9AeFTC2e" rel="noopener" aria-label="Watch: If the flat wasn’t charming enough, wait till you see the garden (640K views)"><video muted loop playsinline disablepictureinpicture preload="none" poster="assets/reels/DKW9AeFTC2e.webp" width="360" height="640" aria-hidden="true"><source src="assets/reels/DKW9AeFTC2e.mp4" type="video/mp4"></video><span class="views"><svg viewBox="0 0 9 10" aria-hidden="true"><path d="M0 0l9 5-9 5z"/></svg>640K views</span><span class="play" aria-hidden="true"><svg viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z"/></svg></span><span class="cap" aria-hidden="true">If the flat wasn’t charming enough, wait till you see the garden</span></a>
+      <a class="tile v t-d" href="https://www.instagram.com/reel/DHdbKbTzSjN/" data-reel="DHdbKbTzSjN" rel="noopener" aria-label="Watch: Living next to Marina Bay Sands would be crazy, wouldn’t it? (394K views)"><video muted loop playsinline disablepictureinpicture preload="none" poster="assets/reels/DHdbKbTzSjN.webp" width="360" height="640" aria-hidden="true"><source src="assets/reels/DHdbKbTzSjN.mp4" type="video/mp4"></video><span class="views"><svg viewBox="0 0 9 10" aria-hidden="true"><path d="M0 0l9 5-9 5z"/></svg>394K views</span><span class="play" aria-hidden="true"><svg viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z"/></svg></span><span class="cap" aria-hidden="true">Living next to Marina Bay Sands would be crazy, wouldn’t it?</span></a>
+      <a class="tile v t-e" href="https://www.instagram.com/reel/Da9gTzdy4Ql/" data-reel="Da9gTzdy4Ql" rel="noopener" aria-label="Watch: Would you live in this home? (375K views)"><video muted loop playsinline disablepictureinpicture preload="none" poster="assets/reels/Da9gTzdy4Ql.webp" width="360" height="640" aria-hidden="true"><source src="assets/reels/Da9gTzdy4Ql.mp4" type="video/mp4"></video><span class="views"><svg viewBox="0 0 9 10" aria-hidden="true"><path d="M0 0l9 5-9 5z"/></svg>375K views</span><span class="play" aria-hidden="true"><svg viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z"/></svg></span><span class="cap" aria-hidden="true">Would you live in this home?</span></a>
+      <a class="tile v t-f" href="https://www.instagram.com/reel/DVlS0Uykk6X/" data-reel="DVlS0Uykk6X" rel="noopener" aria-label="Watch: Who says living in a landed has to break the budget? (356K views)"><video muted loop playsinline disablepictureinpicture preload="none" poster="assets/reels/DVlS0Uykk6X.webp" width="360" height="640" aria-hidden="true"><source src="assets/reels/DVlS0Uykk6X.mp4" type="video/mp4"></video><span class="views"><svg viewBox="0 0 9 10" aria-hidden="true"><path d="M0 0l9 5-9 5z"/></svg>356K views</span><span class="play" aria-hidden="true"><svg viewBox="0 0 9 10"><path d="M0 0l9 5-9 5z"/></svg></span><span class="cap" aria-hidden="true">Who says living in a landed has to break the budget?</span></a>
+      <a class="tile t-stat" href="https://www.instagram.com/aaron.oon/" rel="noopener" data-cta="ig-follow"><span><span class="big">5M+</span><span class="lbl">views on my Instagram reels</span></span><span class="follow"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg><span class="who"><span>Follow me <span class="arr" aria-hidden="true">→</span></span><small>@aaron.oon</small></span></span></a>
     </div>
   </div>
 </section>
@@ -655,6 +655,27 @@ var CONFIG = {
   }
 
 
+  /* Most-watched reels: short silent previews play by themselves while on screen */
+  var resumeReels = null;
+  (function () {
+    var vids = doc.querySelectorAll(".tile.v video");
+    var saveData = navigator.connection && navigator.connection.saveData;
+    if (!vids.length || reduce || saveData || !("IntersectionObserver" in window)) return;
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var v = en.target;
+        if (en.isIntersecting) { v.preload = "auto"; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        else if (!v.paused) v.pause();
+      });
+    }, { threshold: 0.25 });
+    Array.prototype.forEach.call(vids, function (v) { v.muted = true; vio.observe(v); });
+    resumeReels = function () { Array.prototype.forEach.call(vids, function (v) { vio.unobserve(v); vio.observe(v); }); };
+    doc.addEventListener("visibilitychange", function () {
+      if (doc.hidden) Array.prototype.forEach.call(vids, function (v) { v.pause(); });
+      else if (resumeReels) resumeReels();
+    });
+  })();
+
   /* Most-watched reels: play in a dialog (falls back to opening Instagram) */
   var rbox = $("reelbox"), rframe = $("reel-frame"), rout = $("reel-out"), ropener = null;
   if (rbox && typeof rbox.showModal === "function") {
@@ -665,12 +686,13 @@ var CONFIG = {
         var code = t.getAttribute("data-reel");
         rframe.src = "https://www.instagram.com/reel/" + code + "/embed/";
         rout.href = t.href;
+        Array.prototype.forEach.call(doc.querySelectorAll(".tile.v video"), function (v) { v.pause(); });
         rbox.showModal(); track("ReelOpen", true, { reel: code });
       });
     });
     $("reelbox-close").addEventListener("click", function () { rbox.close(); });
     rbox.addEventListener("click", function (e) { if (e.target === rbox) rbox.close(); });
-    rbox.addEventListener("close", function () { rframe.src = "about:blank"; if (ropener) ropener.focus(); });
+    rbox.addEventListener("close", function () { rframe.src = "about:blank"; if (ropener) ropener.focus(); if (resumeReels) resumeReels(); });
   }
 
   /* Photo adjust mode: open the page with #adjust-photo, drag to reposition, +/- to zoom,
