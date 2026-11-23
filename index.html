@@ -358,7 +358,7 @@ html[data-palette] .plan :focus-visible,html[data-palette] .final :focus-visible
       <details><summary>Am I obligated to buy anything?</summary><p>No. You'll get honest numbers and a clear plan, even if the right answer is to wait. The plan is yours to keep whether or not you work with us.</p></details>
       <details><summary>I'm a year or more away from buying, or my HDB hasn't reached MOP. Is it too early?</summary><p>It's the best time. Planning early means your finances, loan and timeline are ready when you're eligible, instead of rushing a decision later.</p></details>
       <details><summary>What should I prepare before the session?</summary><p>Just a rough idea of your budget, income, CPF balance and any existing loans. If you own a property now, have its details handy too. Don't worry if you don't have everything; we'll work through it together.</p></details>
-      <details><summary>Is it online or in person?</summary><p>Your first session is online: a 30-minute video call you can join from anywhere, with the link sent when you book. Any sessions after that can be in person.</p></details>
+      <details><summary>Is it online or in person?</summary><p>Your first session is online: a 60-minute Google Meet call you can join from anywhere, with the link sent when you book. Any sessions after that can be in person.</p></details>
     </div>
   </div>
 </section>
@@ -389,7 +389,7 @@ html[data-palette] .plan :focus-visible,html[data-palette] .final :focus-visible
    ------------------------------------------------------------------ */
 var CONFIG = {
   PIXEL_ID: "",        // Meta pixel ID, e.g. "123456789012345". Empty = no pixel loaded.
-  BOOKING_URL: "https://cal.com/aaron-oon-gn3piy/30min", // Cal.com, Calendly or Google appointment link. Empty = WhatsApp booking card.
+  BOOKING_URL: "https://cal.com/aaron-oon-gn3piy/aoa-consultation", // Cal.com, Calendly or Google appointment link. Empty = WhatsApp booking card.
   VIDEO_URL: "",       // YouTube embed link (https://www.youtube.com/embed/ID) or an .mp4 file. Empty = a placeholder box shows.
   WHATSAPP: "6583368624",
   WA_MESSAGE: "Hi AOA, I'd like to book my free property plan."
@@ -430,7 +430,7 @@ var CONFIG = {
       if (embed.querySelector("iframe")) return;
       embed.textContent = "";
       var box = doc.createElement("div"); box.className = "book-card";
-      box.innerHTML = '<h3>Pick a time that suits you</h3><p class="muted">Choose a 30-minute slot on our booking calendar.</p>';
+      box.innerHTML = '<h3>Pick a time that suits you</h3><p class="muted">Choose a 60-minute slot on our booking calendar.</p>';
       var a = doc.createElement("a"); a.className = "btn"; a.href = CONFIG.BOOKING_URL; a.rel = "noopener"; a.textContent = "Open the booking calendar";
       a.addEventListener("click", function () { track("BookCalendarOpen", true); });
       box.appendChild(a); embed.appendChild(box);
