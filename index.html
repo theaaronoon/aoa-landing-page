@@ -46,7 +46,7 @@ h1,h2,h3,p{margin:0}
 .wrap.narrow{max-width:calc(var(--measure) + 48px)}
 .section{padding:64px 0}
 .soft{background:var(--soft)}
-h2{font-size:clamp(1.75rem,5vw,2.75rem);line-height:1.1;letter-spacing:-.025em;font-weight:700;scroll-margin-top:120px}
+h2{font-size:clamp(1.75rem,5vw,2.75rem);line-height:1.1;letter-spacing:-.025em;font-weight:700;scroll-margin-top:24px}
 .muted{color:var(--muted)}
 
 /* Buttons: feedback on press, instantly */
@@ -55,37 +55,15 @@ h2{font-size:clamp(1.75rem,5vw,2.75rem);line-height:1.1;letter-spacing:-.025em;f
 .btn:active{transform:scale(.97)}
 .btn.small{min-height:44px;padding:0 18px;font-size:.875rem}
 
-/* Header: translucent material, content scrolls under */
-.bar{position:sticky;top:0;z-index:20;background:var(--bar-bg);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);transition:box-shadow 200ms ease}
-.bar.scrolled{box-shadow:0 1px 0 rgba(0,0,0,.08)}
-.bar-in{max-width:1120px;margin:0 auto;padding:14px 16px 10px;display:flex;align-items:center;gap:8px;position:relative}
-.logo{display:inline-flex;align-items:center;min-height:44px;margin-right:auto}
-.logo img{height:36px;width:auto}
-.menu-btn{width:44px;height:44px;flex:0 0 auto;border:0;border-radius:12px;background:transparent;color:var(--ink);display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:background-color 150ms ease}
-.menu-btn:active{background:rgba(0,0,0,.06)}
-.menu-btn span{display:block;width:20px;height:2px;border-radius:2px;background:currentColor;transition:transform 220ms cubic-bezier(.2,.8,.2,1)}
-.menu-btn[aria-expanded="true"] span:first-child{transform:translateY(4px) rotate(45deg)}
-.menu-btn[aria-expanded="true"] span:last-child{transform:translateY(-4px) rotate(-45deg)}
-/* Phones and tablets: the section links live in a drop-down panel under the bar */
-.nav{position:absolute;top:100%;left:0;right:0;display:flex;flex-direction:column;padding:4px 16px 12px;background:var(--nav-bg);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);box-shadow:0 12px 24px rgba(0,0,0,.08);opacity:0;visibility:hidden;transform:translateY(-8px);transform-origin:top right;transition:opacity 180ms ease,transform 240ms cubic-bezier(.2,.8,.2,1),visibility 0s linear 240ms}
-.bar.open .nav{opacity:1;visibility:visible;transform:none;transition:opacity 180ms ease,transform 240ms cubic-bezier(.2,.8,.2,1),visibility 0s}
-.nav a{display:flex;align-items:center;min-height:52px;font-size:1.0625rem;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);transition:color 150ms ease}
-.nav a:last-child{border-bottom:0}
-.nav a:hover,.nav a.active{color:var(--accent-ink)}
-/* Desktop: links sit in the bar */
-@media (min-width:1024px){
-  .bar-in{gap:24px;padding-top:20px;padding-bottom:12px}
-  .menu-btn{display:none}
-  .logo{margin-right:0}
-  .nav{position:static;flex-direction:row;gap:22px;margin-left:auto;padding:0;background:none;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;opacity:1;visibility:visible;transform:none;transition:none}
-  .nav a{min-height:44px;font-size:.875rem;border-bottom:2px solid transparent}
-  .nav a:last-child{border-bottom:2px solid transparent}
-  .nav a.active{border-bottom-color:var(--accent)}
-}
+/* Header: just the logo, centred */
+.top{padding:24px 16px 0;text-align:center}
+.logo{display:inline-flex;align-items:center;justify-content:center;min-height:44px}
+.logo img{height:44px;width:auto}
+@media (min-width:1024px){.top{padding-top:32px}.logo img{height:52px}}
 
 /* Hero */
 .hero{padding:0 0 64px;text-align:center}
-.hero-bg{padding:48px 0 0}
+.hero-bg{padding:40px 0 0}
 .hero-bg .wrap{display:flex;flex-direction:column;align-items:center;gap:20px}
 .hero-bg p.lead{color:var(--muted);text-wrap:pretty;max-width:36em}
 .hero-bg h1{max-width:14em}
@@ -262,7 +240,7 @@ html[data-palette] .plan :focus-visible,html[data-palette] .final :focus-visible
 /* Phones */
 @media (max-width:599px){
   .section{padding:48px 0}
-  .hero-bg{padding-top:32px}
+  .hero-bg{padding-top:28px}
   .hero{padding-bottom:48px}
   .hero p.lead{font-size:1rem}
   .wrap{padding-left:20px;padding-right:20px}
@@ -298,11 +276,8 @@ html[data-palette] .plan :focus-visible,html[data-palette] .final :focus-visible
   .marquee.moving .rail{animation:none}
   .js .reveal{opacity:1;transform:none;transition:none}
   dialog.lightbox{transition:opacity 150ms ease;transform:none}
-  .nav,.bar.open .nav{transform:none}
-  .menu-btn span{transition:none}
 }
-@media (prefers-reduced-transparency:reduce){.nav{background:#fff}.bar{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}dialog.lightbox::backdrop{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(0,0,0,.75)}}
-@media (prefers-contrast:more){.bar{background:#fff;border-bottom:1px solid var(--ink)}}
+@media (prefers-reduced-transparency:reduce){dialog.lightbox::backdrop{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(0,0,0,.75)}}
 /* Dark mode: the site's look. Remove data-theme="dark" from <html> to go back to the light version. */
 html[data-theme="dark"]{color-scheme:dark;
   --base:#000;--ink:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e;--soft:#111113;--surface:#1c1c1e;
@@ -311,9 +286,6 @@ html[data-theme="dark"]{color-scheme:dark;
   --brand:#1c1c1e;--brand-deep:#0a0a0a;--on-brand:#f5f5f7;--on-brand-muted:#a1a1a6;--accent-on-brand:#2997ff}
 html[data-theme="dark"] .logo img,html[data-theme="dark"] footer img{filter:brightness(0) invert(1)}
 html[data-theme="dark"] .logos .dns{filter:invert(1) hue-rotate(180deg)}
-html[data-theme="dark"] .bar.scrolled{box-shadow:0 1px 0 rgba(255,255,255,.08)}
-html[data-theme="dark"] .menu-btn:active{background:rgba(255,255,255,.1)}
-html[data-theme="dark"] .nav{box-shadow:0 12px 24px rgba(0,0,0,.5)}
 html[data-theme="dark"] .video.empty{border-color:#48484a}
 html[data-theme="dark"] .video.empty circle{stroke:#636366}html[data-theme="dark"] .video.empty path{fill:#636366}
 html[data-theme="dark"] .book-card,html[data-theme="dark"] .book-embed{background:var(--surface);box-shadow:0 0 0 1px var(--line)}
@@ -327,24 +299,12 @@ html[data-theme="dark"] .reelbox .reel-out{background:var(--surface);color:var(-
 html[data-theme="dark"] .adjust-bar{background:rgba(28,28,30,.92)}
 html[data-theme="dark"] .adjust-bar button{background:var(--surface)}
 html[data-theme="dark"] .t-stat{box-shadow:inset 0 0 0 1px var(--line)}
-@media (prefers-reduced-transparency:reduce){html[data-theme="dark"] .nav,html[data-theme="dark"] .bar{background:#000}}
-@media (prefers-contrast:more){html[data-theme="dark"] .bar{background:#000;border-bottom-color:var(--ink)}}
 </style>
 </head>
 <body>
 
-<header class="bar" id="bar">
-  <div class="bar-in">
-    <a class="logo" href="#top" aria-label="AOA Real Estate, back to top"><img src="assets/aoa-logo.png" alt="AOA Real Estate" width="1348" height="705"></a>
-    <nav class="nav" id="site-nav" aria-label="Page sections">
-      <a href="#book">Book your plan</a>
-      <a href="#plan">What you leave with</a>
-      <a href="#reviews">What clients say</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a class="btn small" href="#book" data-cta="header">Book a call</a>
-    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span></button>
-  </div>
+<header class="top">
+  <a class="logo" href="#top" aria-label="AOA Real Estate, back to top"><img src="assets/aoa-logo.png" alt="AOA Real Estate" width="1348" height="705"></a>
 </header>
 
 <main>
@@ -369,7 +329,7 @@ html[data-theme="dark"] .t-stat{box-shadow:inset 0 0 0 1px var(--line)}
   </div>
 </section>
 
-<section class="section soft book" id="book" style="scroll-margin-top:100px">
+<section class="section soft book" id="book">
   <div class="wrap">
     <h2 class="reveal">Get your personalised property plan</h2>
     <div class="book-embed reveal" id="book-embed" hidden></div>
@@ -383,7 +343,7 @@ html[data-theme="dark"] .t-stat{box-shadow:inset 0 0 0 1px var(--line)}
       <div class="host-photo"><img src="assets/aaron.jpg" alt="Aaron Oon" width="688" height="1080" loading="lazy"></div>
       <div>
         <p class="eyebrow">Who you'll be speaking with</p>
-        <h3 id="about" style="scroll-margin-top:140px">Aaron Oon</h3>
+        <h3 id="about">Aaron Oon</h3>
         <p class="muted">Aaron mentors a team of realtors at AOA Real Estate and is a chief trainer in real estate marketing. He also co-founded haio.sg, Singapore's #1 property data platform.</p>
       </div>
     </div>
@@ -582,55 +542,13 @@ var CONFIG = {
     box.textContent = ""; box.classList.remove("empty"); box.appendChild(el);
   }
 
-  /* Menu button (phones and tablets) */
-  (function () {
-    var bar = $("bar"), btn = $("menu-btn"), nav = $("site-nav");
-    if (!btn) return;
-    function set(open) {
-      bar.classList.toggle("open", open);
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    }
-    btn.addEventListener("click", function () { set(!bar.classList.contains("open")); });
-    nav.addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
-    doc.addEventListener("keydown", function (e) { if (e.key === "Escape" && bar.classList.contains("open")) { set(false); btn.focus(); } });
-    doc.addEventListener("click", function (e) { if (bar.classList.contains("open") && !bar.contains(e.target)) set(false); });
-    window.addEventListener("resize", function () { if (window.innerWidth >= 1024) set(false); });
-  })();
-
-  /* Header shadow once content scrolls under it */
-  var bar = $("bar");
-  function onScroll() { bar.classList.toggle("scrolled", window.scrollY > 8); }
-  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
-
-  /* Reveal on scroll and active menu link */
+  /* Reveal on scroll */
   if ("IntersectionObserver" in window) {
     var revealIO = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); revealIO.unobserve(en.target); } });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
     Array.prototype.forEach.call(doc.querySelectorAll(".reveal"), function (el) { revealIO.observe(el); });
 
-    var links = {}, order = [];
-    Array.prototype.forEach.call(doc.querySelectorAll(".nav a"), function (a) {
-      var id = a.getAttribute("href").slice(1), t = $(id);
-      if (t) { links[id] = a; order.push(t); }
-    });
-    var navQueued = false, lastActive = null;
-    function syncNav() {
-      navQueued = false;
-      var current = null, best = -Infinity, line = window.innerHeight * 0.4;
-      order.forEach(function (t) { var y = t.getBoundingClientRect().top; if (y < line && y > best) { best = y; current = t.id; } });
-      Object.keys(links).forEach(function (id) { links[id].classList.toggle("active", id === current); });
-      if (current !== lastActive) {
-        lastActive = current;
-        var nav = doc.querySelector(".nav"), a = current && links[current];
-        if (a && nav.scrollWidth > nav.clientWidth) {
-          nav.scrollTo({ left: Math.max(0, a.offsetLeft - nav.offsetLeft - 16), behavior: reduce ? "auto" : "smooth" });
-        }
-      }
-    }
-    window.addEventListener("scroll", function () { if (!navQueued) { navQueued = true; requestAnimationFrame(syncNav); } }, { passive: true });
-    syncNav();
   } else {
     Array.prototype.forEach.call(doc.querySelectorAll(".reveal"), function (el) { el.classList.add("in"); });
   }
