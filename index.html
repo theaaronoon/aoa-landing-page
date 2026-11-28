@@ -80,9 +80,9 @@ h1{font-size:clamp(2.25rem,7vw,4rem);line-height:1.06;letter-spacing:-.03em;font
 /* Press logos in one flat colour (monochrome), like a classic "as featured in" bar */
 .logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px 36px;color:#6e6e73}
 .logos .mono{display:inline-block;flex:none;background:currentColor;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
-.logos .dns{height:38px;aspect-ratio:494/100;-webkit-mask-image:url(assets/logo-dns-mask.png);mask-image:url(assets/logo-dns-mask.png)}
-.logos .edge{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1.375rem;letter-spacing:-.01em}
-.logos .ep{height:40px;aspect-ratio:193/200;-webkit-mask-image:url(assets/logo-edgeprop-mask.png);mask-image:url(assets/logo-edgeprop-mask.png)}
+.logos .dns{height:24px;aspect-ratio:381/39;-webkit-mask-image:url(assets/logo-dns-mask.png);mask-image:url(assets/logo-dns-mask.png)}
+.logos .edge{display:inline-flex;align-items:center;font-weight:700;font-size:1.5rem;letter-spacing:-.02em;line-height:1}
+@media (max-width:599px){.logos{gap:16px 24px}.logos .dns{height:17px}.logos .edge{font-size:1.125rem}}
 
 /* Booking */
 .book .wrap{display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center}
@@ -325,7 +325,7 @@ html[data-theme="dark"] .t-stat{box-shadow:inset 0 0 0 1px var(--line)}
       <p class="eyebrow">As featured in</p>
       <div class="logos">
         <span class="mono dns" role="img" aria-label="DollarsAndSense"></span>
-        <span class="edge"><span class="mono ep" aria-hidden="true"></span>EdgeProp</span>
+        <span class="edge">EdgeProp</span>
       </div>
     </div>
   </div>
