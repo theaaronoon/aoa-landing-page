@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
 <meta property="og:title" content="Free 1-1 Property Plan | AOA Real Estate">
 <meta property="og:description" content="Know exactly what to buy, and when. Book a free 1-1 property plan with AOA Real Estate.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#000000">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -303,6 +303,32 @@ html[data-palette] .plan :focus-visible,html[data-palette] .final :focus-visible
 }
 @media (prefers-reduced-transparency:reduce){.nav{background:#fff}.bar{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}dialog.lightbox::backdrop{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(0,0,0,.75)}}
 @media (prefers-contrast:more){.bar{background:#fff;border-bottom:1px solid var(--ink)}}
+/* Dark mode: the site's look. Remove data-theme="dark" from <html> to go back to the light version. */
+html[data-theme="dark"]{color-scheme:dark;
+  --base:#000;--ink:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e;--soft:#111113;--surface:#1c1c1e;
+  --accent:#0071e3;--accent-press:#0064c8;--on-accent:#fff;--accent-ink:#2997ff;--link-hover:#f5f5f7;--eyebrow:var(--muted);
+  --bar-bg:rgba(0,0,0,.72);--nav-bg:rgba(18,18,20,.96);
+  --brand:#1c1c1e;--brand-deep:#0a0a0a;--on-brand:#f5f5f7;--on-brand-muted:#a1a1a6;--accent-on-brand:#2997ff}
+html[data-theme="dark"] .logo img,html[data-theme="dark"] footer img{filter:brightness(0) invert(1)}
+html[data-theme="dark"] .logos .dns{filter:invert(1) hue-rotate(180deg)}
+html[data-theme="dark"] .bar.scrolled{box-shadow:0 1px 0 rgba(255,255,255,.08)}
+html[data-theme="dark"] .menu-btn:active{background:rgba(255,255,255,.1)}
+html[data-theme="dark"] .nav{box-shadow:0 12px 24px rgba(0,0,0,.5)}
+html[data-theme="dark"] .video.empty{border-color:#48484a}
+html[data-theme="dark"] .video.empty circle{stroke:#636366}html[data-theme="dark"] .video.empty path{fill:#636366}
+html[data-theme="dark"] .book-card,html[data-theme="dark"] .book-embed{background:var(--surface);box-shadow:0 0 0 1px var(--line)}
+html[data-theme="dark"] .book-embed .book-card{box-shadow:none}
+html[data-theme="dark"] .review{box-shadow:none}
+html[data-theme="dark"] .review:hover{box-shadow:0 8px 24px rgba(0,0,0,.6)}
+html[data-theme="dark"] .review.clip::after{color:#0058d6}
+html[data-theme="dark"] dialog.lightbox{background:var(--surface);box-shadow:0 0 0 1px var(--line),0 24px 80px rgba(0,0,0,.7)}
+html[data-theme="dark"] dialog.lightbox::backdrop{background:rgba(0,0,0,.7)}
+html[data-theme="dark"] .reelbox .reel-out{background:var(--surface);color:var(--ink)}
+html[data-theme="dark"] .adjust-bar{background:rgba(28,28,30,.92)}
+html[data-theme="dark"] .adjust-bar button{background:var(--surface)}
+html[data-theme="dark"] .t-stat{box-shadow:inset 0 0 0 1px var(--line)}
+@media (prefers-reduced-transparency:reduce){html[data-theme="dark"] .nav,html[data-theme="dark"] .bar{background:#000}}
+@media (prefers-contrast:more){html[data-theme="dark"] .bar{background:#000;border-bottom-color:var(--ink)}}
 </style>
 </head>
 <body>
@@ -523,11 +549,12 @@ var CONFIG = {
     embed.hidden = false; $("book-wa").hidden = true; $("book-alt").hidden = false;
     var cal = CONFIG.BOOKING_URL.match(/^https:\/\/(?:app\.)?cal\.com\/(.+?)\/?$/);
     if (cal) {
+      var calTheme = doc.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
       embed.innerHTML = '<div id="cal-inline" style="width:100%;min-height:640px"></div>';
       (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; var sc = d.createElement("script"); sc.src = A; sc.onerror = fallback; d.head.appendChild(sc); cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
       window.Cal("init", "aoa", { origin: "https://cal.com" });
-      window.Cal.ns.aoa("inline", { elementOrSelector: "#cal-inline", calLink: cal[1], config: { layout: "month_view", theme: "light" } });
-      window.Cal.ns.aoa("ui", { theme: "light", hideEventTypeDetails: false, layout: "month_view", styles: { branding: { brandColor: (getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#0058d6") } } });
+      window.Cal.ns.aoa("inline", { elementOrSelector: "#cal-inline", calLink: cal[1], config: { layout: "month_view", theme: calTheme } });
+      window.Cal.ns.aoa("ui", { theme: calTheme, hideEventTypeDetails: false, layout: "month_view", styles: { branding: { brandColor: (getComputedStyle(document.documentElement).getPropertyValue("--accent").trim() || "#0058d6") } } });
       window.Cal.ns.aoa("on", { action: "bookingSuccessfulV2", callback: onBooked });
       window.Cal.ns.aoa("on", { action: "bookingSuccessful", callback: onBooked });
       setTimeout(fallback, 10000);
